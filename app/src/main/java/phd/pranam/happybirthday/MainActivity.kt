@@ -20,6 +20,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -42,7 +43,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    GreetingText(message = "Happy Birthday, Ram!", from = "Sitha", modifier = Modifier.padding(innerPadding))
+                    GreetingImage(message = "Happy Birthday, Ram!", from = "Sitha", modifier = Modifier.padding(innerPadding))
                 }
             }
         }
@@ -52,13 +53,19 @@ class MainActivity : ComponentActivity() {
 fun GreetingText(modifier: Modifier = Modifier, message: String, from: String) {
     Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
         Text(text = message, fontSize = 100.sp, lineHeight = 116.sp)
-        Text(text = from, fontSize = 36.sp, modifier = Modifier.padding(16.dp).align(alignment = Alignment.End))
+        Text(text = from, fontSize = 36.sp, modifier = Modifier
+            .padding(16.dp)
+            .align(alignment = Alignment.End))
     }
 }
 @Composable
 fun GreetingImage(message: String, from: String, modifier: Modifier) {
     val image = painterResource(R.drawable.androidparty)
-    Image(painter = image, contentDescription = null)
+    Box {
+        Image(painter = image, contentDescription = null)
+
+        GreetingText(message = "Happy Birthday, Ram!", from = "Sitha", modifier = Modifier.fillMaxSize())
+    }
 }
 
 @Preview(showBackground = true)
