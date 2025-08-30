@@ -5,6 +5,7 @@ import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -29,13 +30,16 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun GreetingText(modifier: Modifier = Modifier, message: String) {
-    Text(text = message, fontSize = 100.sp, lineHeight = 116.sp)
+fun GreetingText(modifier: Modifier = Modifier, message: String, from: String) {
+    Row {
+        Text(text = message, fontSize = 30.sp, lineHeight = 116.sp)
+        Text(text = from, fontSize = 36.sp)
+    }
 }
 @Preview(showBackground = true)
 @Composable
 fun HappyBirthdayCardPreview() {
     HappyBirthdayTheme {
-        GreetingText(message = "Happy Birthday, Android!")
+        GreetingText(message = "Happy Birthday, Android!", from = "Android User")
     }
 }
