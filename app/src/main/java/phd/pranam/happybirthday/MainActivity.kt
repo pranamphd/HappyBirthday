@@ -20,28 +20,17 @@ class MainActivity : ComponentActivity() {
         setContent {
             HappyBirthdayTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    HappyBirthdayCard(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+
                 }
             }
         }
     }
 }
 
-@Composable
-fun HappyBirthdayCard(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
 @Preview(showBackground = true)
 @Composable
 fun HappyBirthdayCardPreview() {
     HappyBirthdayTheme {
-        HappyBirthdayCard("Android")
+
     }
 }
