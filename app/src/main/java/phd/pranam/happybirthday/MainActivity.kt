@@ -1,6 +1,7 @@
 package phd.pranam.happybirthday
 
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -26,11 +27,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
+@Composable
+fun GreetingText(modifier: Modifier = Modifier, message: String) {
+    Text(text = message)
+}
 @Preview(showBackground = true)
 @Composable
 fun HappyBirthdayCardPreview() {
     HappyBirthdayTheme {
-
+        GreetingText(message = "Happy Birthday, Android!")
     }
 }
