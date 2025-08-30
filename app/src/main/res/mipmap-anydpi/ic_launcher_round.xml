@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2025. Pranam.
+  ~ ORCID: https://orcid.org/0009-0007-9316-3616
+  ~
+  ~ This code is licensed under the MIT License.
+  ~
+  ~ You may obtain a copy of the License at https://opensource.org/licenses/MIT
+  ~
+  ~ Attribution:
+  ~ If you use this code, please provide appropriate credit to the original author.
+  ~ For example: "This code is based on work by Pranam whose ORCID is https://orcid.org/0009-0007-9316-3616."
+  -->
+
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@drawable/ic_launcher_background" />
     <foreground android:drawable="@drawable/ic_launcher_foreground" />
